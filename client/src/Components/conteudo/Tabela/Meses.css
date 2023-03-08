@@ -1,0 +1,23 @@
+#mes-atual, #mes-anterior, #mes-posterior {
+    margin: 0px 10px;
+    cursor: default;
+    user-select: none;
+}
+
+#mes-atual {
+    background-color: #5a3c8831;
+    border: 1px solid #5a3c8844;
+    border-radius: 5px;
+    font-size: 2rem;
+    width: 120px;
+}
+
+#mes-anterior, #mes-posterior {
+    color: rgba(128, 128, 128, 0.452);
+    font-size: 1.5rem;
+    width: 80px;
+}
+
+#mes-anterior:hover, #mes-posterior:hover {
+    color: rgb(58, 58, 58);
+}
