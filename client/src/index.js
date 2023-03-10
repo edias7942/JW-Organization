@@ -1,8 +1,8 @@
+import './index.css';
+
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
-
-import './index.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 import Cart from './pages/Cart/Cart'
 import Home from './pages/Home/Home'
@@ -13,7 +13,7 @@ root.render(
   <Router>
     <NavBar />
     <Routes>
-      <Route path='/home' element={<Home />} />
+      <Route path='/' element={<Home />} />
       <Route path='/cart' element={<Cart />} />
     </Routes>
   </Router>

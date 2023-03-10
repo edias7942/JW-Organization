@@ -1,8 +1,9 @@
-import React from "react";
 import './Home.css'
-import Card from "./components/Card/Card";
+
+import React from "react";
 
 import TerritoriosImg from './media/territorios_icon.svg'
+import Card from "./components/Card/Card";
 import CarrinhoImg from './media/carrinho_icon.svg'
 import ConsideracoesImg from './media/consideracoes_icon.svg'
 
@@ -36,7 +37,7 @@ function Home() {
 
         card3: {
             id: 3,
-            toRef: "Considerações",
+            toRef: "field_meets",
             img: ConsideracoesImg,
             title: "Considerações",
             description: [
@@ -48,7 +49,7 @@ function Home() {
 
     }
 
-    return (        
+    return (
         <div className="container">
 
             <div id="section-1">
@@ -62,7 +63,8 @@ function Home() {
                     </div>
                 </div>
                 <div className="cards">
-                    <Card id="card-1" info={cardsSettings.card1} />
+                    <Card id="card-1"
+                    info={cardsSettings.card1}/>
                     <Card id="card-2" info={cardsSettings.card2} />
                     <Card id="card-3" info={cardsSettings.card3} />
                 </div>
@@ -76,13 +78,15 @@ function Home() {
 
                 <div id="section-2-content">
                     <div id="section-2-text">
-                    O objetivo do site é 
+                        O objetivo do site é
                     </div>
                 </div>
-                
+
             </div>
-            
+
+            {console.log("Página Home Carregada!")}
         </div>
+
     )
 }
 

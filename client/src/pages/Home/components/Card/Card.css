@@ -18,8 +18,9 @@
     width: 190px;
 }
 
-.card:hover {
-    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.192);
+.card.hover {
+    background-color: rgb(240, 224, 255);
+    box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.076);
     transform: scale(1.03) translatey(-5px);
     transition: 200ms;
 }
@@ -36,17 +37,30 @@
 
 
 .card-img-div {
-    background-color: rgb(255, 255, 255);
     border: 2px solid rgb(91 60 136);
     border-radius: 10px;
     height: 70px;
+    margin: 0 0 30px 0;
     padding: 15px;
+    transition: 200ms;
     width: 70px;
 }
 
+.card-img-div.hover {
+    background-color: rgb(91 60 136);
+    height: 80px;
+    margin: 0 0 20px 0;
+    width: 80px;
+}
+
 .card-img {
-    height: 70px;
-    width: 70px;
+    height: 100%;
+    width: 100%;
+    transition: 200ms;
+}
+
+.card-img.hover {
+    filter: invert(100%);
 }
 
 .card-text {
@@ -56,10 +70,15 @@
 
 .card-title {
     text-align: center;
-    margin: 30px 0px 15px 0px;
+    margin: 0px 0px 15px 0px;
     font-size: 20px;
     font-weight: 800;
     letter-spacing: 1px;
+    transition: 200ms;
+}
+
+.card-title.hover {
+    font-size: 23px;
 }
 
 .card-description {
