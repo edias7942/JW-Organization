@@ -1,0 +1,9 @@
+{
+    "icons": [
+        {
+            "src": "./../src/components/media/business_bag_icon.svg",
+            "type": "image/svg+xml",
+            "sizes": "512x512"
+        }
+    ]
+}
