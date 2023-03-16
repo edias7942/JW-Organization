@@ -14,16 +14,18 @@ export default function Cart() {
     return (
         <Context.Provider value={{ context, setContext }}>
 
-            <div id="lock-screen" />
-            <CellEdition />
-            <div id="container">
-                <div id="title">
-                    <Link to="/">
-                        <div id="previous">Home</div>
-                    </Link>
-                    <div id="current">Carrinho</div>
+            <div className="container">
+                <div id="lock-screen" />
+                {/* <CellEdition /> */}
+                <div id="content">
+                    <div id="title">
+                        <Link to="/">
+                            <div id="previous">Home</div>
+                        </Link>
+                        <div id="current">Carrinho</div>
+                    </div>
+                    <CartTable />
                 </div>
-                <CartTable />
             </div>
 
         </Context.Provider>

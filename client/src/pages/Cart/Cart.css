@@ -1,9 +1,40 @@
 .container {
+    padding: 0;
     align-items: center;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+}
+
+.content {
+    align-items: center;
+    animation: content-in 1s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     text-align: center;
     width: 90vw;
+}
+
+@keyframes content-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+#lock-screen {
+    background-color: rgba(0, 0, 0, 0.953);
+    display: none;
+    height: 100vh;
+    margin-top: 100px;
+    position: fixed;
+    opacity: 0.1;
+    width: 100vw;
+    z-index: 1;
 }
 
 #previous {
@@ -30,4 +61,3 @@
     user-select: none;
     width: 90vw;
 }
-
