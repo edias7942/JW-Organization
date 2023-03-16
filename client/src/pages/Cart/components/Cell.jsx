@@ -126,6 +126,8 @@ function Cell({ positionInWeek, week, selectedMonth, doubleCell }) {
             setDesignated1,
             designated2,
             setDesignated2,
+            cellMonth,
+            cellDay
         })
 
         document.getElementById("selected-cell").innerHTML = idHtml
