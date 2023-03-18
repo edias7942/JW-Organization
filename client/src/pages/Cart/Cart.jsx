@@ -9,14 +9,14 @@ import CartTable from "./components/CartTable"
 
 export default function Cart() {
 
-    const [context, setContext] = useState(null)
+    const [context, setContext] = useState('a')
 
     return (
         <Context.Provider value={{ context, setContext }}>
 
             <div className="container">
                 <div id="lock-screen" />
-                {/* <CellEdition /> */}
+                <CellEdition />
                 <div id="content">
                     <div id="title">
                         <Link to="/">

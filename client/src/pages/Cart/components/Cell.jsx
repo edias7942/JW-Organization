@@ -36,8 +36,6 @@ function Cell({ positionInWeek, week, selectedMonth, doubleCell }) {
             doubleCell
         }).then((response) => {
 
-            console.log(response.data)
-
             let data = response.data[0]
 
             // Formatting Request Data:
@@ -127,7 +125,8 @@ function Cell({ positionInWeek, week, selectedMonth, doubleCell }) {
             designated2,
             setDesignated2,
             cellMonth,
-            cellDay
+            cellDay,
+            positionInWeek
         })
 
         document.getElementById("selected-cell").innerHTML = idHtml
@@ -135,7 +134,7 @@ function Cell({ positionInWeek, week, selectedMonth, doubleCell }) {
 
         document.getElementById("lock-screen").style.display = "flex"
         document.body.style.overflow = "hidden"
-        document.getElementById("cell-edition-local").focus()
+        document.getElementById("ce-place").focus()
         document.getElementById("cell-edition-modal").style.display = "flex"
 
         {
@@ -143,28 +142,28 @@ function Cell({ positionInWeek, week, selectedMonth, doubleCell }) {
             switch (positionInWeek) {
                 case 1:
                     marginLeft = 8;
-                    break;
+                    break
                 case 2:
                     marginLeft = 16;
-                    break;
+                    break
                 case 3:
                     marginLeft = 32;
-                    break;
+                    break
                 case 4:
                     marginLeft = 40;
-                    break;
+                    break
                 case 5:
                     marginLeft = 21;
-                    break;
+                    break
                 case 6:
                     marginLeft = 29;
-                    break;
+                    break
                 case 7:
                     marginLeft = 37;
-                    break;
+                    break
             }
 
-            marginLeft += idHtml == id2 ? 8 : 0
+            marginLeft += idHtml == idHtml2 ? 8 : 0
             document.getElementById("cell-edition-modal").style.marginLeft = (12 + marginLeft) + "vw"
 
         }

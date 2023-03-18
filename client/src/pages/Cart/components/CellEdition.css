@@ -1,4 +1,249 @@
-.container {
+#cell-edition-modal {
+    background-color: white;
+    border: 2px solid rgb(91 60 136);
+    border-radius: 7px;
     display: none;
-    margin: 0;
-}
+    flex-direction: column;
+    min-height: 250px;
+    margin-top: 200px;
+    margin-left: 100px;
+    padding: 15px;
+    position: fixed;
+    user-select: none;
+    width: 270px;
+    z-index: 2;
+  }
+  
+  #ce-header {
+    align-items: center;
+    border-radius: 7px;
+    display: flex;
+    justify-content: space-between;
+    height: 30px;
+  }
+  
+  #ce-date {
+    align-items: center;
+    background-color: rgba(199, 175, 241, 0.426);
+    border: 2px solid rgba(157, 130, 204, 0.597);
+    border-radius: 7px;
+    display: flex;
+    font-size: 1.6rem;
+    font-weight: 700;
+    height: 100%;
+    justify-content: center;
+    width: 220px;
+  }
+  
+  #ce-close-button {
+    border: 2px solid rgba(0, 0, 0, 0.391);
+    border-radius: 7px;
+    font-weight: 800;
+    height: 100%;
+    width: 30px;
+  }
+  
+  #ce-close-button:hover {
+    background-color: rgba(255, 0, 0, 0.564);
+    border: 2px solid rgb(120, 1, 1);
+    border-radius: 7px;
+    box-shadow: 0;
+    color: white;
+    cursor: pointer;
+    font-weight: 800;
+    height: 30px;
+    width: 30px;
+    transition: 120ms;
+  }
+  
+  #ce-informations {
+    align-items: center;
+    background-color: rgba(199, 175, 241, 0.175);
+    border: 2px solid rgba(199, 175, 241, 0.175);
+    border-radius: 7px;
+    display: flex;
+    font-size: 1.2rem;
+    font-weight: 700;
+    justify-content: space-between;
+    margin-top: 10px;
+    opacity: 0.8;
+    padding: 5px 8px;
+    transition: 150ms;
+  }
+  
+  #ce-wheater {
+    align-items: center;
+    display: flex;
+  }
+  
+  #ce-wheather-icon {
+    height: 20px;
+    margin-left: 5px;
+    width: 20px;
+  }
+  
+  #ce-wheather-icon:hover {
+    transform: rotate(45deg);
+    transition: 300ms;
+  }
+  
+  .ce-item-label {
+    align-items: center;
+    display: flex;
+    font-size: 1.2rem;
+    font-weight: 600;
+    justify-content: space-between;
+    margin-top: 8px;
+    padding: 0px 0px 0px 10px;
+    width: 96%;
+  }
+  
+  .ce-item {
+    border: 1px solid rgb(151, 124, 193);
+    border-radius: 4px;
+    font-weight: 600;
+    outline: none;
+    padding: 3px;
+    text-align: center;
+    transition: 200ms;
+  }
+  
+  .ce-item:focus {
+    background-color: rgba(150, 124, 193, 0.071);
+    outline:1px solid rgba(154, 127, 198, 0.55);
+  }
+  
+  .ce-item:hover {
+    background-color: rgba(150, 124, 193, 0.071);
+  }
+  
+  #ce-place {
+    width: 180px;
+  }
+  
+  .ce-place-option {
+    background-color: rgba(199, 175, 241, 0.165);
+    border-radius: 10px;
+    font-weight: 600;
+    transition: 200ms;
+  }
+  
+  #ce-initial-time {
+    margin-right: 15.4px;
+  }
+  
+  #ce-final-time {
+    margin-left: 16px;
+  }
+  
+  .ce-time {
+    width: 60px;
+  }
+  
+  .ce-time::placeholder {
+    color: rgb(209, 209, 209);
+  }
+  
+  #ce-designated-1, #ce-designated-2 {
+    width: 173px;
+  }
+  
+  #buttons-edition {
+    display: flex;
+    justify-content: end;
+  }
+  
+  #save-button {
+    background-color: rgb(255, 255, 255);
+    border: 3px solid rgb(81, 135, 221);
+    border-radius: 10px;
+    color: rgb(67, 123, 255);
+    cursor: pointer;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-top: 15px;
+    opacity: 1;
+    padding: 3px 8px;
+    transition: 200ms;
+  }
+  
+  #save-button:hover:not(:disabled) {
+    background-color: rgb(67, 123, 255);
+    border: 3px solid rgba(81, 135, 221, 0.274);
+    color: white;
+  }
+  
+  #save-button:disabled {
+    cursor: default;
+    opacity: 0.5;
+  }
+  
+  #clean-button {
+    background-color: rgb(144, 144, 144);
+    border: 0;
+    border-radius: 10px;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-top: 15px;
+    margin-right: 10px;
+    opacity: 0.5;
+    padding: 3px 8px;
+    transition: 200ms;
+  }
+
+  #clean-button:hover {
+    opacity: 1;
+  }
+  
+  #cancel-button {
+    background-color: rgb(144, 144, 144);
+    border: 0;
+    border-radius: 10px;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-top: 15px;
+    margin-right: 10px;
+    opacity: 0.5;
+    padding: 3px 8px;
+    transition: 200ms;
+  }
+  
+  #cancel-button:hover {
+    opacity: 1;
+  }
+  
+  #confirm-exit {
+    align-items: center;
+    background-color: rgb(247, 204, 204);
+    border: 2px solid rgb(249, 145, 145);
+    border-radius: 10px;
+    display: none;
+    flex-direction: column;
+    height: 50px;
+    justify-content: center;
+    margin-top: 15px;
+    padding: 5px 5%;
+    width: 89%;
+    transition: 200ms;
+  }
+  
+  #confirm-exit-button {
+    background-color: white;
+    border: 1px solid red;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 5px;
+    padding: 3px;
+    transition: 200ms;
+    width: 80px;
+  }
+  
+  #confirm-exit-button:hover {
+    background-color: rgba(255, 0, 0, 0.482);
+    color: white;
+  }

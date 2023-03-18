@@ -16,5 +16,6 @@ ul {
 
 #body {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  overflow-x: hidden;
 }
