@@ -8,8 +8,8 @@ import Link from "../../context/Link"
 import CartTable from "./components/CartTable"
 
 export default function Cart() {
-
-    const [context, setContext] = useState('a')
+    
+    const [context, setContext] = useState('')
 
     return (
         <Context.Provider value={{ context, setContext }}>

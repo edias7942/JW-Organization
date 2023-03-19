@@ -5,7 +5,7 @@ import Axios from "axios"
 
 import Link from "../../context/Link"
 
-import LoginIcon from "./../media/login.svg"
+import LoginIcon from "../media/login.svg"
 
 export default function NavBar() {
     

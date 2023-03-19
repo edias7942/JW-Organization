@@ -3,7 +3,7 @@ import "./Cell.css"
 import Axios from "axios"
 import { useState, useEffect, useContext } from "react";
 
-import Context from "./../../../context/Context"
+import Context from "../../../context/Context"
 import { months, weeks } from "../../../components/consts/YearStructure";
 import { exitEdition } from "./CellEdition";
 

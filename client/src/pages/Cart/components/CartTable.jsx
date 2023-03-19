@@ -2,7 +2,7 @@ import "./CartTable.css"
 
 import React, { useState } from "react"
 
-import { months, weeksMonths } from "./../../../components/consts/YearStructure"
+import { months, weeksMonths } from "../../../components/consts/YearStructure"
 import TableRow from "./TableRow"
 
 function CartTable() {

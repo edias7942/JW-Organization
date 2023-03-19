@@ -1,18 +1,27 @@
+// Importing CSS:
 import "./CellEdition.css"
 
+// Importing Oficial Libraries:
 import { useContext, useEffect, useState } from "react";
 import Axios from "axios"
 
+// Importing Context:
 import Context from "../../../context/Context";
 
+// Importing Consts:
 import { handleTime, handleName, cleanStates } from "../../../components/consts/FormattingData";
 import { allowedCharactersText } from "../../../components/consts/Dict";
+import { toOriginalValues, verifyChanges } from "./Functions";
 
 function CellEdition() {
 
+    // Using Context:
+    
     const { context, setContext } = useContext(Context)
 
+
     // Importing Global States and Global Data:
+
     let {
         cellMonth,
         cellDay,
@@ -28,11 +37,12 @@ function CellEdition() {
         setInitialTime,
         setPlace,
         place,
-        positionInWeek
+        positionInWeek,
     } = context
 
-    let dayWeek
+    // Handling with Date Data:
 
+    let dayWeek
     switch (positionInWeek) {
         case 1:
             dayWeek = "Domingo"
@@ -58,7 +68,6 @@ function CellEdition() {
         default:
             break
     }
-
     switch (cellMonth) {
         case "Jan":
             cellMonth = "Janeiro"
@@ -100,6 +109,9 @@ function CellEdition() {
             break;
     }
 
+
+    // Setting Edition States:
+
     const [placeEdition, setPlaceEdition] = useState("")
 
     const [initialTimeEdition, setInitialTimeEdition] = useState("")
@@ -117,7 +129,6 @@ function CellEdition() {
         setDesignated1Edition(designated1)
         setDesignated2Edition(designated2)
         setOriginalValues({ place, initialTime, finalTime, designated1, designated2 })
-        document.addEventListener("keydown", handleEscape)
     }, [idHtml])
 
     const [places, setPlaces] = useState([])
@@ -130,15 +141,10 @@ function CellEdition() {
         }).then((response) => setPlaces(response.data))
     }, [])
 
-    function verifyChanges() {
-        let validPlace, validInitialTime, validFinalTime, validDesignated1, validDesignated2
-        if (placeEdition !== originalValues.place) validPlace = true
-        if (initialTimeEdition !== originalValues.initialTime) validInitialTime = true
-        if (finalTimeEdition !== originalValues.finalTime) validFinalTime = true
-        if (designated1Edition !== originalValues.designated1) validDesignated1 = true
-        if (designated2Edition !== originalValues.designated2) validDesignated2 = true
-        return (validPlace || validInitialTime || validFinalTime || validDesignated1 || validDesignated2)
-    }
+
+    // 
+
+    verifyChanges([placeEdition, initialTimeEdition, finalTimeEdition, designated1Edition, designated2Edition], originalValues)
 
     function handleSave(id = 0, place, initialTime, finalTime, designated1, designated2) {
 
@@ -148,30 +154,15 @@ function CellEdition() {
 
     }
 
-    function setOriginalValues2([...setStates] = [function () { return }], originalValues = []) {
-
-        if (typeof originalValues === "object") {
-            originalValues = Object.values(originalValues)
-        }
-
-        setStates.map((setState, index) => setState(originalValues[index]))
-
-    }
-
-    const handleEscape = () => {
-        exitEdition(false)
-    }
-
     function exitEdition(definitely = true, saveEdition = false) {
 
-        document.removeEventListener("keydown", handleEscape)
-        if (!definitely && verifyChanges()) {
+        if (!definitely && verifyChanges([placeEdition, initialTimeEdition, finalTimeEdition, designated1Edition, designated2Edition], originalValues)) {
             document.getElementById("confirm-exit").style.display = "flex"
             return
         }
-
+    
         if (definitely) document.getElementById("confirm-exit").style.display = "none"
-
+    
         if (saveEdition) {
             setOriginalValues({
                 place: placeEdition,
@@ -181,10 +172,10 @@ function CellEdition() {
                 designated2: designated2Edition
             })
         } else {
-            setOriginalValues2([setPlaceEdition, setInitialTimeEdition, setFinalTimeEdition, setDesignated1Edition, setDesignated2Edition], originalValues)
-            setOriginalValues2([setPlace, setInitialTime, setFinalTime, setDesignated1, setDesignated2], originalValues)
+            toOriginalValues([setPlaceEdition, setInitialTimeEdition, setFinalTimeEdition, setDesignated1Edition, setDesignated2Edition], originalValues)
+            toOriginalValues([setPlace, setInitialTime, setFinalTime, setDesignated1, setDesignated2], originalValues)
         }
-
+    
         let idHtml = document.getElementById("selected-cell").innerHTML
         document.getElementById(idHtml).classList.remove("selected")
         document.getElementById("cell-edition-modal").style.display = "none"
@@ -306,13 +297,13 @@ function CellEdition() {
                         type="button">Cancelar</button>
 
                     <button id="save-button"
-                        title={!verifyChanges() ? "Realize alguma modificação!" : ""}
+                        title={!verifyChanges([placeEdition, initialTimeEdition, finalTimeEdition, designated1Edition, designated2Edition], originalValues) ? "Realize alguma modificação!" : ""}
                         onClick={() => {
                             exitEdition(true, true)
                             handleSave(id, placeEdition, initialTimeEdition, finalTimeEdition, designated1Edition, designated2Edition)
                         }}
                         type="button"
-                        disabled={!verifyChanges()}>Salvar</button>
+                        disabled={!verifyChanges([placeEdition, initialTimeEdition, finalTimeEdition, designated1Edition, designated2Edition], originalValues)}>Salvar</button>
 
                 </div>
 
