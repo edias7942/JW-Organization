@@ -17,7 +17,7 @@ export default function Cart() {
             <div className="container">
                 <div id="lock-screen" />
                 <CellEdition />
-                <div id="content">
+                <div className="content">
                     <div id="title">
                         <Link to="/">
                             <div id="previous">Home</div>

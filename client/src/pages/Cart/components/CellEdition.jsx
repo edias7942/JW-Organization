@@ -32,7 +32,7 @@ function CellEdition() {
     } = context
 
     let dayWeek
-    
+
     switch (positionInWeek) {
         case 1:
             dayWeek = "Domingo"
@@ -117,6 +117,7 @@ function CellEdition() {
         setDesignated1Edition(designated1)
         setDesignated2Edition(designated2)
         setOriginalValues({ place, initialTime, finalTime, designated1, designated2 })
+        document.addEventListener("keydown", handleEscape)
     }, [idHtml])
 
     const [places, setPlaces] = useState([])
@@ -125,7 +126,7 @@ function CellEdition() {
 
     useEffect(() => {
         Axios.post("http://localhost:3001/cart_places", {
-            command: "SELECT ID, PLACE_NAME FROM CART_PLACES"
+            command: "SELECT * FROM CART_PLACES"
         }).then((response) => setPlaces(response.data))
     }, [])
 
@@ -139,7 +140,7 @@ function CellEdition() {
         return (validPlace || validInitialTime || validFinalTime || validDesignated1 || validDesignated2)
     }
 
-    function handleSave(id, place, initialTime, finalTime, designated1, designated2) {
+    function handleSave(id = 0, place, initialTime, finalTime, designated1, designated2) {
 
         Axios.post("http://localhost:3001/designate", {
             id, place, initialTime, finalTime, designated1, designated2
@@ -147,8 +148,23 @@ function CellEdition() {
 
     }
 
-    function exitEdition(definitely, saveEdition = false) {
+    function setOriginalValues2([...setStates] = [function () { return }], originalValues = []) {
 
+        if (typeof originalValues === "object") {
+            originalValues = Object.values(originalValues)
+        }
+
+        setStates.map((setState, index) => setState(originalValues[index]))
+
+    }
+
+    const handleEscape = () => {
+        exitEdition(false)
+    }
+
+    function exitEdition(definitely = true, saveEdition = false) {
+
+        document.removeEventListener("keydown", handleEscape)
         if (!definitely && verifyChanges()) {
             document.getElementById("confirm-exit").style.display = "flex"
             return
@@ -165,16 +181,8 @@ function CellEdition() {
                 designated2: designated2Edition
             })
         } else {
-            setPlace(originalValues.place)
-            setInitialTime(originalValues.initialTime)
-            setFinalTime(originalValues.finalTime)
-            setDesignated1(originalValues.designated1)
-            setDesignated2(originalValues.designated2)
-            setPlaceEdition(originalValues.place)
-            setInitialTimeEdition(originalValues.initialTime)
-            setFinalTimeEdition(originalValues.finalTime)
-            setDesignated1Edition(originalValues.designated1)
-            setDesignated2Edition(originalValues.designated2)
+            setOriginalValues2([setPlaceEdition, setInitialTimeEdition, setFinalTimeEdition, setDesignated1Edition, setDesignated2Edition], originalValues)
+            setOriginalValues2([setPlace, setInitialTime, setFinalTime, setDesignated1, setDesignated2], originalValues)
         }
 
         let idHtml = document.getElementById("selected-cell").innerHTML
@@ -304,7 +312,7 @@ function CellEdition() {
                             handleSave(id, placeEdition, initialTimeEdition, finalTimeEdition, designated1Edition, designated2Edition)
                         }}
                         type="button"
-                        disabled={!verifyChanges}>Salvar</button>
+                        disabled={!verifyChanges()}>Salvar</button>
 
                 </div>
 
@@ -314,7 +322,6 @@ function CellEdition() {
                         type="button"
                         onClick={() => {
                             exitEdition(true)
-                            cleanStates([setPlaceEdition, setInitialTimeEdition, setFinalTimeEdition, setDesignated1Edition, setDesignated2Edition])
                         }}>Continuar</button>
                 </div>
 

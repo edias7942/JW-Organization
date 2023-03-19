@@ -5,6 +5,7 @@ import { useState, useEffect, useContext } from "react";
 
 import Context from "./../../../context/Context"
 import { months, weeks } from "../../../components/consts/YearStructure";
+import { exitEdition } from "./CellEdition";
 
 function Cell({ positionInWeek, week, selectedMonth, doubleCell }) {
 
@@ -207,7 +208,7 @@ function Cell({ positionInWeek, week, selectedMonth, doubleCell }) {
                 {doubleCell &&
                     <div id={idHtml2} className={classes + "cell-1-2 cell-content"}
                         onClick={() => openCellEdition(id2, idHtml2, place2, setPlace2, initialTime2, setInitialTime2, finalTime2, setFinalTime2, designated12, setDesignated12, designated22, setDesignated22, classes)}>
-                        {place1 || initialTime2 || finalTime2 || designated12 || designated22 ? (
+                        {place2 || initialTime2 || finalTime2 || designated12 || designated22 ? (
                             <div>
                                 <p id={idHtml2 + "_cell_place"}
                                     className="cell-place cell-item">{place2}</p>
