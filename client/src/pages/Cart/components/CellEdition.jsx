@@ -210,7 +210,8 @@ function CellEdition() {
                         onChange={(e) => {
                             setPlace(e.target.value)
                             setPlaceEdition(e.target.value)
-                        }}>
+                        }}
+                        >
                         {
                             places.map(element => {
                                 return (

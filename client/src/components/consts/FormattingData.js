@@ -89,7 +89,7 @@ export const handleTime = {
 
     },
 
-    addingInNext(value, setTime, setTimeEdition, maxHour, maxMinute) {
+    addingInNext(value, setTime, setTimeEdition, maxHour = 24, maxMinute = 59) {
         if (!value) {
             this.setTime2('', setTime, setTimeEdition)
             return
