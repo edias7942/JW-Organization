@@ -12,14 +12,18 @@ import Territory3 from "./media/SVG/Territory_3.svg"
 import Territory4 from "./media/SVG/Territory_4.svg"
 import Territory5 from "./media/SVG/Territory_5.svg"
 import Territory6 from "./media/SVG/Territory_6.svg"
+import Territory7 from "./media/SVG/Territory_7.svg"
+import Territory8 from "./media/SVG/Territory_8.svg"
+import Territory9 from "./media/SVG/Territory_9.svg"
+import Territory10 from "./media/SVG/Territory_10.svg"
+import Territory11 from "./media/SVG/Territory_11.svg"
 import { capitalize } from "../../../components/Functions"
 
 export default function TerritoriesTable() {
 
     const [territoriesList, setTerritoriesList] = useState("")
 
-    const territoryImages = [Territory1, Territory2, Territory3, Territory4, Territory5, Territory6]
-    const territoryNumber = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11"]
+    const territoryImages = [Territory1, Territory2, Territory3, Territory4, Territory5, Territory6, Territory7, Territory8, Territory9, Territory10, Territory11]
 
     useEffect(() => {
 
