@@ -23,10 +23,11 @@
     display: none;
     height: 100vh;
     margin-left: -5vw;
+    margin-top: -300px;
     position: fixed;
     opacity: 0.1;
     width: 100vw;
-    z-index: 0;
+    z-index: 1;
 }
 
 #previous {

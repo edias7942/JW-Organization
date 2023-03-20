@@ -11,7 +11,7 @@ import Context from "../../../context/Context";
 // Importing Consts:
 import { handleTime, handleName, cleanStates } from "../../../components/consts/FormattingData";
 import { allowedCharactersText } from "../../../components/consts/Dict";
-import { toOriginalValues, verifyChanges } from "./Functions";
+import { toOriginalValues, verifyChanges } from "../../../components/Functions";
 import DeleteIcon from "./../../../components/media/delete_icon.svg"
 
 function CellEdition() {
@@ -137,9 +137,7 @@ function CellEdition() {
     // Searching Cart Places:
 
     useEffect(() => {
-        Axios.post("http://localhost:3001/cart_places", {
-            command: "SELECT * FROM CART_PLACES"
-        }).then((response) => setPlaces(response.data))
+        Axios.post("http://localhost:3001/cart_places").then((response) => setPlaces(response.data))
     }, [])
 
 
@@ -205,6 +203,7 @@ function CellEdition() {
                 <label id="ce-place-label" className="ce-item-label"
                     htmlFor="ce-place">
                     Local: <select type="text"
+                    title="Local"
                         id="ce-place"
                         className="ce-item"
                         value={placeEdition}
@@ -233,6 +232,7 @@ function CellEdition() {
 
                     <div id="times">
                         <input type="text"
+                        title="Horário Inicial"
                             id="ce-initial-time"
                             className="ce-item ce-time"
                             spellCheck="false"
@@ -245,6 +245,7 @@ function CellEdition() {
                             placeholder="00h00" />
                         às
                         <input type="text"
+                        title="Horário Final"
                             id="ce-final-time"
                             className="ce-item ce-time"
                             spellCheck="false"

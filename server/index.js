@@ -17,7 +17,7 @@ app.post("/designation", (req, res) => {
     const week = req.body.week
     const positionInWeek = req.body.positionInWeek
     db.query
-        (`SELECT ID, PLACE, TIME, DESIGNATED_1, DESIGNATED_2 FROM DESIGNATIONS2023 WHERE WEEK = ${week} AND P_IN_WEEK = ${positionInWeek}`,
+        (`SELECT ID, PLACE, TIME, DESIGNATED_1, DESIGNATED_2 FROM designations2023 WHERE WEEK = ${week} AND P_IN_WEEK = ${positionInWeek}`,
             (err, result) => {
                 if (err) res.send(err)
                 res.send(result)
@@ -39,15 +39,28 @@ app.post("/designate", (req, res) => {
     (`UPDATE designations2023 SET PLACE = "${place}", TIME = "${time}", DESIGNATED_1 = "${designated1}", DESIGNATED_2 = "${designated2}" WHERE ID = ${id}`)
 })
 
+
+
 app.post("/cart_places", (req, res) => {
-    let command = req.body.command
     db.query
-    (command,
+    ("SELECT * FROM cart_places ORDER BY PLACE",
         (err, result) => {
             if (err) res.send(err)
             res.send(result)
         })
 })
+
+
+
+app.post("/territories", (req, res) => {
+    db.query
+    ("SELECT * FROM territories ORDER BY NUMBER",
+    (err, result) => {
+        if (err) res.send(err)
+        res.send(result)
+    })
+})
+
 
 const port = 3001
 app.listen(port, () => {

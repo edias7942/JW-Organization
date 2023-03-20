@@ -39,3 +39,14 @@ export const handleKeyPress = (keyPress, callback, keyFunction) => {
         callback()
 }
 
+
+/**
+ * Change the first letter of the text to Upper
+ * @param text 
+ * @returns The same text with the first letter upper
+ */
+export function capitalize(text = "") {
+    let firstLetter = text[0].toUpperCase()
+    let newText = `${firstLetter}${text.slice(1)}`
+    return newText
+}

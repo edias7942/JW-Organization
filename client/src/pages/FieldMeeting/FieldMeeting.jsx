@@ -1,12 +1,11 @@
-import "./Territories.css"
+import "./FieldMeeting.css"
 
 import React, { useState } from "react"
 
 import Context from "../../context/Context"
 import Link from "../../context/Link"
-import TerritoriesTable from "./components/TerritoriesTable"
 
-export default function Territories() {
+export default function FieldMeeting() {
     
     const [context, setContext] = useState('')
 
@@ -19,9 +18,10 @@ export default function Territories() {
                         <Link to="/">
                             <div id="previous">Home</div>
                         </Link>
-                        <div id="current">Territórios</div>
+                        <div id="current">Pregação</div>
+                        
                     </div>
-                    <TerritoriesTable />
+                    Em Breve...
                 </div>
             </div>
 

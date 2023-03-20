@@ -9,6 +9,7 @@ import Home from './pages/Home/Home'
 import NavBar from './components/NavBar/NavBar';
 import Footer from './components/Footer/Footer';
 import Territories from './pages/Territories/Territories';
+import FieldMeeting from './pages/FieldMeeting/FieldMeeting';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -18,6 +19,7 @@ root.render(
       <Route path='/' element={<Home />} />
       <Route path='/cart' element={<Cart />} />
       <Route path='/territories' element={<Territories />} />
+      <Route path='/field_meeting' element={<FieldMeeting />} />
     </Routes>
     <Footer />
   </Router>

@@ -1,6 +1,6 @@
 import "./CartTable.css"
 
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 
 import { months, weeksMonths } from "../../../components/consts/YearStructure"
 import TableRow from "./TableRow"
@@ -9,6 +9,10 @@ function CartTable() {
 
     const [selectedMonth, setSelectedMonth] = useState(0)
     const week = weeksMonths[selectedMonth].initialWeek
+
+    useEffect(() => {
+
+    }, [])
 
     return (
         <div id="cart-table">

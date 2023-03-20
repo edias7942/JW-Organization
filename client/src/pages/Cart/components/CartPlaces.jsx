@@ -16,9 +16,7 @@ export default function CartPlaces() {
     const [places, setPlaces] = useState("")
 
     useEffect(() => {
-        Axios.post("http://localhost:3001/cart_places", {
-            command: "SELECT * FROM CART_PLACES ORDER BY PLACE"
-        }).then((response) => setPlaces(response.data))
+        Axios.post("http://localhost:3001/cart_places").then((response) => setPlaces(response.data))
     }, [])
 
     return (

@@ -1,0 +1,74 @@
+#territories-table {
+    display: grid;
+    grid-template-columns: 22vw 22vw 22vw 22vw;
+    margin-top: 20px;
+    justify-content: space-between;
+    width: 90.5vw;
+}
+
+.territory-card {
+    border: 2px solid rgba(34, 80, 171, 0.223);
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 1vw;
+    padding: 10px;
+    transition:150ms;
+}
+
+.territory-card:hover {
+    background-color: rgba(0, 0, 255, 0.026);
+    border: 2px solid rgba(26, 53, 103, 0.765);
+    border-radius: 5px;
+}
+
+.territory-img {
+    height: 200px;
+    width: 20.4vw;
+}
+
+.territory-section1 {
+    display: flex;
+    justify-content: space-around;
+}
+
+.territory-title-title {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+.territory-localization {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.territory-status {
+    align-items: center;
+    color: white;
+    border-radius: 10px;
+    display: flex;
+    font-size: 1.3rem;
+    font-weight: 700;
+    height: 30px;
+    justify-content: center;
+    letter-spacing: 1px;
+    margin-top: 8px;
+    width: 100px;
+}
+
+.territory-status.disponivel {
+    background-color: rgb(199, 233, 199);
+    color: rgb(2, 88, 2);
+}
+
+.territory-status.grupo {
+    background-color: rgb(234, 197, 112);
+    color: rgb(88, 68, 2);
+}
+
+.territory-status.ocupado {
+    background-color: rgb(209, 199, 233);
+    color: rgb(41, 2, 88);
+}
