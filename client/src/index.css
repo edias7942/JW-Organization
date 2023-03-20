@@ -13,9 +13,3 @@ html {
 ul {
   list-style-type: none;
 }
-
-#body {
-  display: flex;
-  flex-direction: row;
-  overflow-x: hidden;
-}

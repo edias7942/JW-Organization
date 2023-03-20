@@ -6,9 +6,10 @@ import CellEdition from "./components/CellEdition"
 import Context from "../../context/Context"
 import Link from "../../context/Link"
 import CartTable from "./components/CartTable"
+import CartPlaces from "./components/CartPlaces"
 
 export default function Cart() {
-    
+
     const [context, setContext] = useState('')
 
     return (
@@ -19,12 +20,11 @@ export default function Cart() {
                 <CellEdition />
                 <div className="content">
                     <div id="title">
-                        <Link to="/">
-                            <div id="previous">Home</div>
-                        </Link>
+                        <Link to="/"> <div id="previous">Home</div> </Link>
                         <div id="current">Carrinho</div>
                     </div>
                     <CartTable />
+                    <CartPlaces />
                 </div>
             </div>
 

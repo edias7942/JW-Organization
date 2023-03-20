@@ -7,18 +7,21 @@
     justify-content: center;
     position: fixed;
     width: 100vw;
+    z-index: 1;
 }
 
 #nav-content {
     display: flex;
-    width: 90vw;
     justify-content: space-between;
+    width: 90vw;
 }
 
 #nav-left {
+    cursor: default;
     font-size: 2rem;
     font-weight: 700;
     min-width: 160px;
+    padding: 5px;
     text-align: center;
 }
 

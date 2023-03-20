@@ -12,6 +12,7 @@ import Context from "../../../context/Context";
 import { handleTime, handleName, cleanStates } from "../../../components/consts/FormattingData";
 import { allowedCharactersText } from "../../../components/consts/Dict";
 import { toOriginalValues, verifyChanges } from "./Functions";
+import DeleteIcon from "./../../../components/media/delete_icon.svg"
 
 function CellEdition() {
 
@@ -133,7 +134,7 @@ function CellEdition() {
 
     const [places, setPlaces] = useState([])
 
-    // Seraching Cart Places:
+    // Searching Cart Places:
 
     useEffect(() => {
         Axios.post("http://localhost:3001/cart_places", {
@@ -210,8 +211,7 @@ function CellEdition() {
                         onChange={(e) => {
                             setPlace(e.target.value)
                             setPlaceEdition(e.target.value)
-                        }}
-                        >
+                        }} >
                         {
                             places.map(element => {
                                 return (
@@ -285,13 +285,14 @@ function CellEdition() {
 
                 <div id="buttons-edition">
 
-                    <button id="clean-button"
+                    <img id="clean-button"
                         title="Limpar Dados"
                         type="button"
+                        src={DeleteIcon}
                         onClick={() => {
                             cleanStates([setPlace, setInitialTime, setFinalTime, setDesignated1, setDesignated2])
                             cleanStates([setPlaceEdition, setInitialTimeEdition, setFinalTimeEdition, setDesignated1Edition, setDesignated2Edition])
-                        }}>Clean</button>
+                        }}/>
 
                     <button id="cancel-button"
                         onClick={() => exitEdition(false)}

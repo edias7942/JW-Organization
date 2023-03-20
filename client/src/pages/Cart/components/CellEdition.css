@@ -1,17 +1,28 @@
 #cell-edition-modal {
+    animation: cell-edition-in 100ms ease;
     background-color: white;
     border: 2px solid rgb(91 60 136);
     border-radius: 7px;
     display: none;
     flex-direction: column;
     min-height: 250px;
-    margin-top: 200px;
-    margin-left: 100px;
     padding: 15px;
     position: fixed;
     user-select: none;
     width: 270px;
-    z-index: 2;
+    z-index: 1;
+  }
+
+  @keyframes cell-edition-in {
+    0% {
+      margin-top: -100px;
+      opacity: 0;
+      transform: scale(0.5);
+    } 100% {
+      margin-top: 0px;
+      opacity: 1;
+      transform: scale(1);
+    }
   }
   
   #ce-header {
@@ -179,22 +190,25 @@
   }
   
   #clean-button {
-    background-color: rgb(144, 144, 144);
-    border: 0;
-    border-radius: 10px;
-    color: rgb(255, 255, 255);
+    background-color: rgb(216, 216, 216);
+    border: 2px solid rgba(60, 60, 60, 0.323);
+    border-radius: 5px;
     cursor: pointer;
-    font-weight: 700;
-    letter-spacing: 1px;
-    margin-top: 15px;
-    margin-right: 10px;
+    filter: saturate(0);
+    margin-right: 68px;
+    margin-top: 17px;
     opacity: 0.5;
-    padding: 3px 8px;
+    padding: 1px;
+    width: 20px;
     transition: 200ms;
   }
 
   #clean-button:hover {
+    background-color: rgb(255, 224, 224);
+    border: 2px solid rgba(255, 0, 0, 0.66);
+    filter: saturate(1);
     opacity: 1;
+    transform: scale(1.05);
   }
   
   #cancel-button {

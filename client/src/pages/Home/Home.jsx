@@ -57,10 +57,13 @@ function Home() {
                     <div id="greetings-title">
                         Seja <b>Bem-Vindo(a)</b> ao <br /> Jw Organization
                     </div>
-                    <div id="greetings-text">
+                    <p id="greetings-text">
                         Nesse site você encontrará auxílio para organizar
-                        as informações e designações da sua Congregação
-                    </div>
+                        as informações e designações da sua Congregação.
+                        Esse não é um site oficial das Testemunhas de Jeová,
+                        mas esperamos poder te auxiliar a <br />organizar muitas coisas 
+                        com nossas ferramentas.
+                    </p>
                 </div>
                 <div className="cards">
                     <Card id="card-1"

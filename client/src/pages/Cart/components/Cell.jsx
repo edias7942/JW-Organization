@@ -110,6 +110,12 @@ function Cell({ positionInWeek, week, selectedMonth, doubleCell }) {
         classes
     ) {
 
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "smooth"
+        })
+        
         if (classes.includes("another-month")) return
 
         setContext({
@@ -131,12 +137,12 @@ function Cell({ positionInWeek, week, selectedMonth, doubleCell }) {
         })
 
         document.getElementById("selected-cell").innerHTML = idHtml
-        document.getElementById(idHtml).classList.toggle("selected")
+        document.getElementById(idHtml).classList.add("selected")
 
         document.getElementById("lock-screen").style.display = "flex"
         document.body.style.overflow = "hidden"
-        document.getElementById("ce-place").focus()
         document.getElementById("cell-edition-modal").style.display = "flex"
+        document.getElementById("ce-place").focus()
 
         {
             let marginLeft
@@ -165,7 +171,7 @@ function Cell({ positionInWeek, week, selectedMonth, doubleCell }) {
             }
 
             marginLeft += idHtml == idHtml2 ? 8 : 0
-            document.getElementById("cell-edition-modal").style.marginLeft = (12 + marginLeft) + "vw"
+            document.getElementById("cell-edition-modal").style.marginLeft = (8 + marginLeft) + "vw"
 
         }
 
