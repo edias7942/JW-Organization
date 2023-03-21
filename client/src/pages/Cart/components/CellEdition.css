@@ -1,28 +1,31 @@
 #cell-edition-modal {
-    animation: cell-edition-in 100ms ease;
+    animation: cell-edition 200ms ease-out;
     background-color: white;
     border: 2px solid rgb(91 60 136);
     border-radius: 7px;
     display: none;
     flex-direction: column;
-    margin-top: -300px;
     min-height: 250px;
     padding: 15px;
-    position: fixed;
+    position: absolute;
+    top: 200px;
     user-select: none;
     width: 270px;
-    z-index: 1;
+    z-index: 2;
   }
 
-  @keyframes cell-edition-in {
+  #cell-edition-modal.exiting {
+    opacity: 0;
+    margin-top: -30px;
+    transition: 200ms;
+  }
+
+  @keyframes cell-edition {
     0% {
-      margin-top: -400px;
+      margin-top: -30px;
       opacity: 0;
-      transform: scale(0.5);
     } 100% {
-      margin-top: -300px;
       opacity: 1;
-      transform: scale(1);
     }
   }
   

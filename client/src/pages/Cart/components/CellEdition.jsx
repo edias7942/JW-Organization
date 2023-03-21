@@ -17,7 +17,7 @@ import DeleteIcon from "./../../../components/media/delete_icon.svg"
 function CellEdition() {
 
     // Using Context:
-    
+
     const { context, setContext } = useContext(Context)
 
 
@@ -159,9 +159,9 @@ function CellEdition() {
             document.getElementById("confirm-exit").style.display = "flex"
             return
         }
-    
+
         if (definitely) document.getElementById("confirm-exit").style.display = "none"
-    
+
         if (saveEdition) {
             setOriginalValues({
                 place: placeEdition,
@@ -174,13 +174,19 @@ function CellEdition() {
             toOriginalValues([setPlaceEdition, setInitialTimeEdition, setFinalTimeEdition, setDesignated1Edition, setDesignated2Edition], originalValues)
             toOriginalValues([setPlace, setInitialTime, setFinalTime, setDesignated1, setDesignated2], originalValues)
         }
-    
+
         let idHtml = document.getElementById("selected-cell").innerHTML
         document.getElementById(idHtml).classList.remove("selected")
-        document.getElementById("cell-edition-modal").style.display = "none"
         document.getElementById("selected-cell").innerHTML = ""
         document.getElementById("body").style.overflowY = "inherit"
-        document.getElementById("lock-screen").style.display = "none"
+        document.getElementById("cell-edition-modal").classList.add("exiting")
+        document.getElementById("lock-screen").classList.add("exiting")
+        setTimeout(() => {
+            document.getElementById("cell-edition-modal").style.display = "none"
+            document.getElementById("lock-screen").style.display = "none"
+            document.getElementById("cell-edition-modal").classList.remove("exiting")
+            document.getElementById("lock-screen").classList.remove("exiting")
+        }, 200);
     }
 
     return (
@@ -203,7 +209,7 @@ function CellEdition() {
                 <label id="ce-place-label" className="ce-item-label"
                     htmlFor="ce-place">
                     Local: <select type="text"
-                    title="Local"
+                        title="Local"
                         id="ce-place"
                         className="ce-item"
                         value={placeEdition}
@@ -232,7 +238,7 @@ function CellEdition() {
 
                     <div id="times">
                         <input type="text"
-                        title="Horário Inicial"
+                            title="Horário Inicial"
                             id="ce-initial-time"
                             className="ce-item ce-time"
                             spellCheck="false"
@@ -245,7 +251,7 @@ function CellEdition() {
                             placeholder="00h00" />
                         às
                         <input type="text"
-                        title="Horário Final"
+                            title="Horário Final"
                             id="ce-final-time"
                             className="ce-item ce-time"
                             spellCheck="false"
@@ -293,7 +299,7 @@ function CellEdition() {
                         onClick={() => {
                             cleanStates([setPlace, setInitialTime, setFinalTime, setDesignated1, setDesignated2])
                             cleanStates([setPlaceEdition, setInitialTimeEdition, setFinalTimeEdition, setDesignated1Edition, setDesignated2Edition])
-                        }}/>
+                        }} />
 
                     <button id="cancel-button"
                         onClick={() => exitEdition(false)}

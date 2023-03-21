@@ -29,17 +29,21 @@ export default function TerritoriesTable() {
 
         Axios.post("http://localhost:3001/territories").then((response) => setTerritoriesList(response.data))
         
-    })
+    }, [])
+
+    function openTerritorie(territoryNumber) {
+        
+    }
     
     return (
         <div id="territories-table">
             {territoriesList ? (territoriesList.map((e, i) => {
                 return (
-                    <div className="territory-card">
+                    <div className="territory-card" onClick={() => console.log("Território: ", e.NUMBER)}>
                         <img className="territory-img" src={territoryImages[i]} alt="" />
                         <div className="territory-section1">
                             <div className="territory-header">
-                                <div className="territory-title-title">Território {e.NUMBER}</div>
+                                <div className="territory-title-title"> Território {e.NUMBER}</div>
                                 <div className="territory-localization">{e.LOCALIZATION}</div>
                             </div>
                             <div title={capitalize(e.STATUS)} className={"territory-status " + e.STATUS}>{capitalize(e.STATUS)}</div>
