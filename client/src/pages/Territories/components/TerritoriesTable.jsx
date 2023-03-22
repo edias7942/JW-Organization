@@ -17,13 +17,27 @@ import Territory8 from "./media/SVG/Territory_8.svg"
 import Territory9 from "./media/SVG/Territory_9.svg"
 import Territory10 from "./media/SVG/Territory_10.svg"
 import Territory11 from "./media/SVG/Territory_11.svg"
+import Territory12 from "./media/SVG/Territory_12.svg"
+import Territory13 from "./media/SVG/Territory_13.svg"
+import Territory14 from "./media/SVG/Territory_14.svg"
+import Territory15 from "./media/SVG/Territory_15.svg"
+import Territory16 from "./media/SVG/Territory_16.svg"
+import Territory21 from "./media/SVG/Territory_21.svg"
+import Territory23 from "./media/SVG/Territory_23.svg"
 import { capitalize } from "../../../components/Functions"
 
 export default function TerritoriesTable() {
-
+    let Territory17 = ""
+    let Territory18 = ""
+    let Territory19 = ""
+    let Territory20 = ""
+    let Territory22 = ""
+    let Territory24 = ""
     const [territoriesList, setTerritoriesList] = useState("")
 
-    const territoryImages = [Territory1, Territory2, Territory3, Territory4, Territory5, Territory6, Territory7, Territory8, Territory9, Territory10, Territory11]
+    const territoryImages = [Territory1, Territory2, Territory3, Territory4, Territory5, Territory6, Territory7, Territory8, Territory9, Territory10, Territory11,
+                             Territory12, Territory13, Territory14, Territory15, Territory16, Territory17, Territory18, Territory19, Territory20, Territory21,
+                             Territory22, Territory23, Territory24]
 
     useEffect(() => {
 
