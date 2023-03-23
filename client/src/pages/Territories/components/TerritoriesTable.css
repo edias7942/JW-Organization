@@ -21,6 +21,38 @@
     border-radius: 5px;
 }
 
+.territory-card.hide {
+    animation: territory-hide 400ms ease-in;
+}
+
+.territory-card.show {
+    animation: territory-hide 400ms ease-out reverse;
+}
+
+@keyframes territory-hide {
+    0%{
+        opacity: 1;
+    } 20% {
+        opacity: 1;
+        transform: scale(1.02);
+    }100% {
+        opacity: 0;
+        transform: scale(0)
+    }
+}
+
+.territory-card.opening {
+    animation: territory-opening 600ms ease-in forwards;
+}
+
+@keyframes territory-opening {
+    0% {
+
+    } 100% {
+        transform: scale(2);
+    }
+}
+
 .territory-img {
     height: 200px;
     width: 20.4vw;
