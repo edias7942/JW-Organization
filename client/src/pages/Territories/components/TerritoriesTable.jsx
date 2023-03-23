@@ -27,6 +27,9 @@ import Territory23 from "./media/SVG/Territory_23.svg"
 import { capitalize } from "../../../components/Functions"
 
 export default function TerritoriesTable() {
+
+    const [isOpenTerritory, setIsOpenTerritory] = useState(false)
+
     let Territory17 = ""
     let Territory18 = ""
     let Territory19 = ""
@@ -35,25 +38,65 @@ export default function TerritoriesTable() {
     let Territory24 = ""
     const [territoriesList, setTerritoriesList] = useState("")
 
-    const territoryImages = [Territory1, Territory2, Territory3, Territory4, Territory5, Territory6, Territory7, Territory8, Territory9, Territory10, Territory11,
-                             Territory12, Territory13, Territory14, Territory15, Territory16, Territory17, Territory18, Territory19, Territory20, Territory21,
-                             Territory22, Territory23, Territory24]
+    const territoryImages = [
+        Territory1, Territory2, Territory3, Territory4, Territory5, Territory6, Territory7, Territory8,
+        Territory9, Territory10, Territory11, Territory12, Territory13, Territory14, Territory15, Territory16,
+        Territory17, Territory18, Territory19, Territory20, Territory21, Territory22, Territory23, Territory24]
 
     useEffect(() => {
 
         Axios.post("http://localhost:3001/territories").then((response) => setTerritoriesList(response.data))
-        
+
     }, [])
 
     function openTerritorie(territoryNumber) {
-        
+
+        let selectedTerritory = document.getElementById(`territory-card-${territoryNumber}`)
+        let secondTerritories = [...document.getElementsByClassName("territory-card")]
+
+        if (!isOpenTerritory) {
+
+            // Opening Territory:
+            selectedTerritory.classList.add("opening")
+            setTimeout(() => {
+                selectedTerritory.classList.remove("opening")
+            }, 600);
+
+            // Hidden other territories:
+            secondTerritories.map((e) => {
+                if (e.id !== `territory-card-${territoryNumber}`) {
+                    let element = document.getElementById(e.id)
+                    element.classList.add("hide")
+                    setTimeout(() => {
+                        element.style.display = "none"
+                        element.classList.remove("hide")
+                    }, 300)
+                }
+            })
+
+        } else {
+
+            // Showing other territories:
+            secondTerritories.map((e) => {
+                if (e.id !== `territory-card-${territoryNumber}`) {
+                    let element = document.getElementById(e.id)
+                    element.style.display = "inherit"
+                    element.classList.add("show")
+                    setTimeout(() => {
+                        element.classList.remove("show")
+                    }, 400);
+                }
+            })
+            
+        }
+        setIsOpenTerritory(!isOpenTerritory)
     }
-    
+
     return (
         <div id="territories-table">
             {territoriesList ? (territoriesList.map((e, i) => {
                 return (
-                    <div className="territory-card" onClick={() => console.log("Território: ", e.NUMBER)}>
+                    <div id={`territory-card-${e.NUMBER}`} className="territory-card" onClick={() => openTerritorie(e.NUMBER)}>
                         <img className="territory-img" src={territoryImages[i]} alt="" />
                         <div className="territory-section1">
                             <div className="territory-header">
