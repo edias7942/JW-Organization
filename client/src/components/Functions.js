@@ -50,3 +50,12 @@ export function capitalize(text = "") {
     let newText = `${firstLetter}${text.slice(1)}`
     return newText
 }
+
+
+export function scrollToTop (top = 0, left = 0, behavior = "smooth") {
+    window.scrollTo({
+        top,
+        left,
+        behavior
+    })
+}

@@ -142,7 +142,7 @@ function Cell({ positionInWeek, week, selectedMonth, doubleCell }) {
         document.getElementById("lock-screen").style.display = "flex"
         document.body.style.overflow = "hidden"
         document.getElementById("cell-edition-modal").style.display = "flex"
-        document.getElementById("ce-place").focus()
+        document.getElementById("ce-designated-1").focus()
 
         {
             let marginLeft
