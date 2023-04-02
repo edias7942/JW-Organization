@@ -3,7 +3,6 @@ This project have the objective to help the Jehovah Witnessess create and organi
 cart preaching and administrate yours territories
 
 # Problems to Solve:
-• When press key Esc, the function exitEditing have a problem.
 
 # Futuros Updates:
 
