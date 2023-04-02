@@ -9,7 +9,7 @@ cart preaching and administrate yours territories
 <h2>Geral:</h2>
 • Autenticação de usuários (separados entre níveis de permissão de acesso);<br>
 • Área pessoal por usuário para informações como: lembretes de designações, relatório de ipregação, avisos para os administradores.<br>
-• Criar do lado esquerdo um menu;
+• Criar um menu de navegação ao lado esquerdo;
 
 <h2>Territórios:</h2>
 • Impressão de Territórios com Informações Principais;<br>
@@ -24,10 +24,20 @@ cart preaching and administrate yours territories
 <h2>Carrinho:</h2>
 • Uso de inteligência artificial para designações;<br>
 • Edição e adição de pontos do carrinho junto com seus links para o Google Maps;<br>
-• Criação e exportação de planilha, pdf ou imagem com as informções da tabela com base em um modelo pre-pronto,<br>
-⠀com opção para estilização de cor do tema e texto bíblico na tabela;
+• Criação e exportação de planilha, pdf ou imagem com as informações da tabela com base em um modelo pre-estabelecido,<br>
+⠀com opção para estilização de cor do tema e texto bíblico no documento;<br>
+• Atualizar o campo de designados conectando com a tabela de irmãos para que só<br>
+⠀possa ser adicionado nomes listados, e caso seja desejado, adicione uma nova pessoa;
 
 <h2>SVG dos territórios:</h2>
 • Consertar as bordas para que onde não houver ruas fique sem borda;<br>
 • Adicionar letras para referenciar os lados das ruass;<br>
 • Adicionar pontos relevantes nos territórios para facilitar a localização;<br>
+
+<h2>Tabelas para o Banco de Dados:</h2>
+1 • Geral: Irmãos da congregação com informações relevantes;<br>
+2 • Carrinho: Informações sobre o carrinho;<br>
+3 • Carrinho: Pontos do Carrinho (Criar uma ligação da Tabela 1 com essa via foreign key);<br>
+4 • Território: Informações Gerais dos Territórios;<br>
+5 • Território: Informações como: Ruas (com link por rua), Histórico dos responsáveis pelo território com especificações de datas de trabalho;<br>
+6 • 
