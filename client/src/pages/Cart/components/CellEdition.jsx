@@ -153,14 +153,7 @@ function CellEdition() {
 
     }
 
-    function exitEdition(definitely = true, saveEdition = false) {
-
-        if (!definitely && verifyChanges([placeEdition, initialTimeEdition, finalTimeEdition, designated1Edition, designated2Edition], originalValues)) {
-            document.getElementById("confirm-exit").style.display = "flex"
-            return
-        }
-
-        if (definitely) document.getElementById("confirm-exit").style.display = "none"
+    function exitEdition(saveEdition = false) {
 
         if (saveEdition) {
             setOriginalValues({
@@ -195,7 +188,7 @@ function CellEdition() {
             <div id="ce-header">
                 <div id="ce-date">{cellDay} de {cellMonth}</div>
                 <button id="ce-close-button"
-                    onClick={() => exitEdition(false)}>X</button>
+                    onClick={() => exitEdition()}>X</button>
             </div>
             <div id="ce-informations">
                 <div id="ce-day-week">{dayWeek}</div>
@@ -302,27 +295,18 @@ function CellEdition() {
                         }} />
 
                     <button id="cancel-button"
-                        onClick={() => exitEdition(false)}
+                        onClick={() => exitEdition()}
                         type="button">Cancelar</button>
 
                     <button id="save-button"
                         title={!verifyChanges([placeEdition, initialTimeEdition, finalTimeEdition, designated1Edition, designated2Edition], originalValues) ? "Realize alguma modificação!" : ""}
                         onClick={() => {
-                            exitEdition(true, true)
+                            exitEdition(true)
                             handleSave(id, placeEdition, initialTimeEdition, finalTimeEdition, designated1Edition, designated2Edition)
                         }}
                         type="button"
                         disabled={!verifyChanges([placeEdition, initialTimeEdition, finalTimeEdition, designated1Edition, designated2Edition], originalValues)}>Salvar</button>
 
-                </div>
-
-                <div id="confirm-exit">
-                    <h3>As alterações não serão salvas:</h3>
-                    <button id="confirm-exit-button"
-                        type="button"
-                        onClick={() => {
-                            exitEdition(true)
-                        }}>Continuar</button>
                 </div>
 
             </form>

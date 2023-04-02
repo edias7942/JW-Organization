@@ -8,10 +8,11 @@ let DataBaseChoose = "local"
 app.use(express.json())
 app.use(cors())
 
-// // Conexão com o Banco de Dados principal:
+let db
+// Conexão com o Banco de Dados em Nuvem:
 if (DataBaseChoose === "cloud") {
     console.log("Conectado ao Banco de Dados: Planet Scale")
-    const db = mysql.createConnection({
+    db = mysql.createConnection({
         database: "jw-organization",
         user: "0sne07cwjouq446ozsn1",
         host: "aws.connect.psdb.cloud",
@@ -20,19 +21,17 @@ if (DataBaseChoose === "cloud") {
             rejectUnauthorized: true
         }
     });
-    return db
 }
 
 // Conexão com o Banco de Dados Local:
 if (DataBaseChoose === "local") {
     console.log("Conectado ao banco de dados Local da máquina!")
-    const db = mysql.createPool({
+    db = mysql.createPool({
         host: "localhost",
         user: "root",
         password: "1234",
         database: "jwccc"
     })
-    return db
 }
 
 
@@ -46,6 +45,7 @@ app.post("/designation", (req, res) => {
                 res.send(result)
             })
 })
+
 
 app.post("/designate", (req, res) => {
     const id = req.body.id

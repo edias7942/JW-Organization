@@ -232,35 +232,3 @@
   #cancel-button:hover {
     opacity: 1;
   }
-  
-  #confirm-exit {
-    align-items: center;
-    background-color: rgb(247, 204, 204);
-    border: 2px solid rgb(249, 145, 145);
-    border-radius: 10px;
-    display: none;
-    flex-direction: column;
-    height: 50px;
-    justify-content: center;
-    margin-top: 15px;
-    padding: 5px 5%;
-    width: 89%;
-    transition: 200ms;
-  }
-  
-  #confirm-exit-button {
-    background-color: white;
-    border: 1px solid red;
-    border-radius: 10px;
-    cursor: pointer;
-    font-weight: 600;
-    margin-top: 5px;
-    padding: 3px;
-    transition: 200ms;
-    width: 80px;
-  }
-  
-  #confirm-exit-button:hover {
-    background-color: rgba(255, 0, 0, 0.482);
-    color: white;
-  }
