@@ -8,7 +8,8 @@ cart preaching and administrate yours territories
 
 <h2>Geral:</h2>
 • Autenticação de usuários (separados entre níveis de permissão de acesso);<br>
-• Área pessoal por usuário para informações como: lembretes de designações, relatório de ipregação, avisos para os administradores.<br>
+• Área pessoal por usuário para informações como: lembretes de designações,<br>
+⠀relatório de ipregação, avisos para os administradores.<br>
 • Criar um menu de navegação ao lado esquerdo;
 
 <h2>Territórios:</h2>
@@ -16,7 +17,8 @@ cart preaching and administrate yours territories
 • Impressão de Histórico do território;<br>
 • Impressão de documento de controle dos territórios para Betel;<br>
 • Implementar nos mapas links para suas ruas e pontos;<br>
-• Criar filtro para organizar tabela por: status, localização, pesquisa por rua, pesquisa por locais etc;<br>
+• Criar filtro para organizar tabela por: status, localização, pesquisa por<br>
+⠀rua, pesquisa por locais etc;<br>
 • Criar banco de dados para cada território para que possa conter informações como:<br>
 ⠀- Ruas e link por rua;<br>
 ⠀- Histórico do uso do território;
@@ -24,8 +26,9 @@ cart preaching and administrate yours territories
 <h2>Carrinho:</h2>
 • Uso de inteligência artificial para designações;<br>
 • Edição e adição de pontos do carrinho junto com seus links para o Google Maps;<br>
-• Criação e exportação de planilha, pdf ou imagem com as informações da tabela com base em um modelo pre-estabelecido,<br>
-⠀com opção para estilização de cor do tema e texto bíblico no documento;<br>
+• Criação e exportação de planilha, pdf ou imagem com as informações da tabela com<br>
+⠀base em um modelo pre-estabelecido, com opção para estilização de cor do tema e<br>
+⠀texto bíblico no documento;<br>
 • Atualizar o campo de designados conectando com a tabela de irmãos para que só<br>
 ⠀possa ser adicionado nomes listados, e caso seja desejado, adicione uma nova pessoa;
 
@@ -39,5 +42,6 @@ cart preaching and administrate yours territories
 2 • Carrinho: Informações sobre o carrinho;<br>
 3 • Carrinho: Pontos do Carrinho (Criar uma ligação da Tabela 1 com essa via foreign key);<br>
 4 • Território: Informações Gerais dos Territórios;<br>
-5 • Território: Informações como: Ruas (com link por rua), Histórico dos responsáveis pelo território com especificações de datas de trabalho;<br>
+5 • Território: Informações como: Ruas (com link por rua), Histórico dos responsáveis<br>
+⠀pelo território com especificações de datas de trabalho;<br>
 6 • 
