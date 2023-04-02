@@ -19,13 +19,14 @@ cart preaching and administrate yours territories
 • Implementar nos mapas links para suas ruas e pontos;<br>
 • Criar filtro para organizar tabela por: status, localização, pesquisa por rua, pesquisa por locais etc;<br>
 • Criar banco de dados para cada território para que possa conter informações como:<br>
-' Ruas e links para cada rua;<br>
-' Histórico do território e de seu uso;
+⠀⠀Ruas e links para cada rua;<br>
+⠀⠀Histórico do território e de seu uso;
 
 <h2>Carrinho:</h2>
 • Uso de inteligência artificial para designações;<br>
 • Edição e adição de pontos do carrinho junto com seus links para o Google Maps;<br>
-• Criação e exportação de planilha, pdf ou imagem com as informções da tabela com base em um modelo pre-pronto, com opção para estilização de cor do tema e texto bíblico na tabela;
+• Criação e exportação de planilha, pdf ou imagem com as informções da tabela com base em um modelo pre-pronto,<br>
+⠀⠀com opção para estilização de cor do tema e texto bíblico na tabela;
 
 <h2>SVG dos territórios:</h2>
 • Consertar as bordas para que onde não houver ruas fique sem borda;<br>
