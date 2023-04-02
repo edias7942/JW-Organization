@@ -19,8 +19,8 @@ cart preaching and administrate yours territories
 • Implementar nos mapas links para suas ruas e pontos;<br>
 • Criar filtro para organizar tabela por: status, localização, pesquisa por rua, pesquisa por locais etc;<br>
 • Criar banco de dados para cada território para que possa conter informações como:<br>
--⠀Ruas e links para cada rua;<br>
--⠀Histórico do território e de seu uso;
+⠀-Ruas e links para cada rua;<br>
+⠀-Histórico do território e de seu uso;
 
 <h2>Carrinho:</h2>
 • Uso de inteligência artificial para designações;<br>
