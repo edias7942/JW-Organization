@@ -13,6 +13,8 @@ const db = mysql.createPool({
     database: "jwccc"
 })
 
+console.log("Conectado ao banco de dados!")
+
 app.post("/designation", (req, res) => {
     const week = req.body.week
     const positionInWeek = req.body.positionInWeek

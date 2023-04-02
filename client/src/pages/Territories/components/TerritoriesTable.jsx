@@ -24,6 +24,10 @@ import Territory13 from "./media/SVG/Territory_13.svg"
 import Territory14 from "./media/SVG/Territory_14.svg"
 import Territory15 from "./media/SVG/Territory_15.svg"
 import Territory16 from "./media/SVG/Territory_16.svg"
+import Territory17 from "./media/SVG/Territory_17.svg"
+import Territory18 from "./media/SVG/Territory_18.svg"
+import Territory19 from "./media/SVG/Territory_19.svg"
+import Territory20 from "./media/SVG/Territory_20.svg"
 import Territory21 from "./media/SVG/Territory_21.svg"
 import Territory23 from "./media/SVG/Territory_23.svg"
 import { capitalize, scrollToTop } from "../../../components/Functions"
@@ -59,10 +63,6 @@ export default function TerritoriesTable() {
         "y": MapIconYellow
     }
 
-    let Territory17 = ""
-    let Territory18 = ""
-    let Territory19 = ""
-    let Territory20 = ""
     let Territory22 = ""
     let Territory24 = ""
 
