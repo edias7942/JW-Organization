@@ -9,7 +9,7 @@ cart preaching and administrate yours territories
 <h2>Geral:</h2>
 • Autenticação de usuários (separados entre níveis de permissão de acesso);<br>
 • Área pessoal por usuário para informações como: lembretes de designações,<br>
-⠀relatório de ipregação, avisos para os administradores.<br>
+⠀relatório de pregação, avisos para os administradores etc;<br>
 • Criar um menu de navegação ao lado esquerdo;
 
 <h2>Territórios:</h2>
@@ -30,7 +30,8 @@ cart preaching and administrate yours territories
 ⠀base em um modelo pre-estabelecido, com opção para estilização de cor do tema e<br>
 ⠀texto bíblico no documento;<br>
 • Atualizar o campo de designados conectando com a tabela de irmãos para que só<br>
-⠀possa ser adicionado nomes listados, e caso seja desejado, adicione uma nova pessoa;
+⠀possa ser adicionado nomes listados, e caso seja desejado, adicione uma nova pessoa;<br>
+• Listar por ordem de frequência de designações;
 
 <h2>SVG dos territórios:</h2>
 • Consertar as bordas para que onde não houver ruas fique sem borda;<br>
