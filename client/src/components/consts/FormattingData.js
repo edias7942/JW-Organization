@@ -22,7 +22,7 @@ export const handleTime = {
             if (value.length === 2) {
                 this.setTime2(value.slice(0, 1), setTime, setTimeEdition)
                 return
-            } else this.setTime2(value)
+            } else this.setTime2(value, setTime, setTimeEdition)
         }
 
         // If the entered character is not valid:

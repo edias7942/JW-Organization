@@ -1,9 +1,37 @@
+/* Territories Table */
+
+#container-territories {
+    height: 1650px;
+}
+
 #territories-table {
     display: grid;
     grid-template-columns: 22vw 22vw 22vw 22vw;
     margin-top: 20px;
     justify-content: space-between;
+    position: absolute;
+    transition: 500ms;
     width: 90.5vw;
+    z-index: 0;
+}
+
+#territories-table.hide {
+    animation: territories-table-hide 400ms ease-in;
+}
+
+#territories-table.show {
+    animation: territories-table-hide 400ms ease-out reverse;
+}
+
+@keyframes territories-table-hide {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0.95)
+    }
 }
 
 .territory-card {
@@ -12,7 +40,7 @@
     cursor: pointer;
     margin-bottom: 1vw;
     padding: 10px;
-    transition:150ms;
+    transition: 150ms;
 }
 
 .territory-card:hover {
@@ -103,4 +131,117 @@
 .territory-status.ocupado {
     background-color: rgb(209, 199, 233);
     color: rgb(41, 2, 88);
+}
+
+
+/* Opened Territory */
+
+#opened-territory-container {
+    border: 2px solid rgba(34, 80, 171, 0.223);
+    border-radius: 5px;
+    display: none;
+    flex-direction: column;
+    height: 80vh;
+    margin-top: 20px;
+    padding: 0 1.5vw;
+    position: absolute;
+    width: 70vw;
+    z-index: 1;
+}
+
+#opened-territory-container.show {
+    animation: opened-territory-showing 600ms ease-in;
+}
+
+#opened-territory-container.hide {
+    animation: opened-territory-showing 400ms ease-in reverse;
+}
+
+@keyframes opened-territory-showing {
+    0% {
+        transform: scale(1.05);
+        opacity: 0;
+    } 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+#ot-header {
+    align-items: center;
+    border-bottom: 2px solid rgba(128, 128, 128, 0.515);
+    display: flex;
+    height: 30px;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding: 0.5vw 0;
+}
+
+#ot-header-back {
+    cursor: pointer;
+    height: 30px;
+    opacity: 50%;
+    transition: 150ms;
+    user-select: none;
+    width: 30px;
+}
+
+#ot-header-back:hover {
+    opacity: 70%;
+}
+
+#ot-header-title {
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+#ot-images {
+    display: flex;
+    justify-content: space-between;
+}
+
+#ot-img {
+    border-radius: 5px;
+    height: 350px;
+    padding: 1.5vw;
+    transition: 500ms;
+    width: 60%;
+}
+
+#ot-streets {
+    border: 2px solid rgba(128, 128, 128, 0.631);
+    border-radius: 5px;
+    height: min-content;
+    width: 33.5%;
+}
+
+#ot-streets-header {
+    background-color: rgba(128, 128, 128, 0.697);
+    border-radius: 3px 3px 0 0;
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 700;
+    padding: 5px 10px;
+}
+
+.ot-street {
+    border-bottom: 1px solid rgba(128, 128, 128, 0.323);
+    cursor: default;
+    display: flex;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 1px 7px 0;
+    opacity: 0.5;
+    padding: 3px 7px;
+}
+
+.ot-street:hover {
+    opacity: 1;
+}
+
+.ot-street-icon {
+    margin-right: 10px;
+    user-select: none;
+    width: 20px;
 }
