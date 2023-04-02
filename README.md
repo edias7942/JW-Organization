@@ -24,7 +24,8 @@ cart preaching and administrate yours territories
 
 <h2>Carrinho:</h2>
 • Uso de inteligência artificial para designações;<br>
-• Edição e adição de pontos do carrinho junto com seus links para o Google Maps;
+• Edição e adição de pontos do carrinho junto com seus links para o Google Maps;<br>
+• Criação e exportação de planilha, pdf ou imagem com as informções da tabela com base em um modelo pre-pronto, com opção para estilização de cor do tema e texto bíblico na tabela;
 
 <h2>SVG dos territórios:</h2>
 • Consertar as bordas para que onde não houver ruas fique sem borda;<br>
