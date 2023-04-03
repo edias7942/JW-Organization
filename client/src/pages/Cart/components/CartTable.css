@@ -1,6 +1,4 @@
 #cart-table {
-    border: 2px solid #000000;
-    border-radius: 2px;
     display: flex;
     flex-direction: column;
     margin: 10px 0 0 0;

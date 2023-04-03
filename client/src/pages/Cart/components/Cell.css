@@ -2,9 +2,6 @@
     border-top: 1px solid #aeaeae;
 }
 
-#cell.current-month {
-}
-
 #cell.current-month:hover {
     background-color: #a584d79a;
 }
