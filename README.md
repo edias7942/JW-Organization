@@ -13,6 +13,8 @@ cart preaching and administrate yours territories
 • Criar um menu de navegação ao lado esquerdo;
 
 <h2>Territórios:</h2>
+• Fazer o Download dos mapas em: PDF, JPG, PNG, SVG etc;<br>
+• Criar novos territórios e deletar territórios;<br>
 • Impressão de Territórios com Informações Principais;<br>
 • Impressão de Histórico do território;<br>
 • Impressão de documento de controle dos territórios para Betel;<br>
