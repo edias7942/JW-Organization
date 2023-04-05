@@ -3,7 +3,6 @@
 }
 
 #cell.current-month {
-    background-color: #5a3c8831;
 }
 
 #cell.current-month:hover {
@@ -17,7 +16,7 @@
 
 .cell-header {
     align-items: center;
-    border-bottom: 1px solid #808080af;
+    border-bottom: 1px solid #80808047;
     display: flex;
     font-size: 1.2rem;
     font-weight: 700;
@@ -64,11 +63,11 @@
 }
 
 .cell-1-2 {
-    border-left: 1px solid #aeaeae;
+    border-left: 1px solid #aeaeae70;
 }
 
 .cell-1-2.another-month {
-    border-left: 1px solid #d6d6d6;
+    border-left: 1px solid #7c7c7c;
 }
 
 .cell-item {
