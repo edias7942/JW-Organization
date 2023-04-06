@@ -6,7 +6,6 @@ import { useState, useEffect, useContext } from "react";
 import Context from "../../../context/Context"
 import { months, weeks } from "../../../components/consts/YearStructure";
 import { exitEdition } from "./CellEdition";
-const apiHost = process.env.API_HOST
 
 function Cell({ positionInWeek, week, selectedMonth, doubleCell }) {
 

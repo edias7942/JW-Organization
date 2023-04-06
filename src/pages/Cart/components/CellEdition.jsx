@@ -14,8 +14,6 @@ import { allowedCharactersText } from "../../../components/consts/Dict";
 import { toOriginalValues, verifyChanges } from "../../../components/Functions";
 import DeleteIcon from "./../../../components/media/delete_icon.svg"
 
-const apiHost = process.env.API_HOST
-
 function CellEdition() {
 
     // Using Context:
