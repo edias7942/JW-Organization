@@ -32,7 +32,7 @@ function Cell({ positionInWeek, week, selectedMonth, doubleCell }) {
     // Searching Data on API:
 
     useEffect(() => {
-        Axios.post(`https://jw-organization-api.herokuapp.com/designation`, {
+        Axios.post(`${apiHost}/designation`, {
             week,
             positionInWeek,
             doubleCell

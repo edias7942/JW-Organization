@@ -14,6 +14,8 @@ import { allowedCharactersText } from "../../../components/consts/Dict";
 import { toOriginalValues, verifyChanges } from "../../../components/Functions";
 import DeleteIcon from "./../../../components/media/delete_icon.svg"
 
+const apiHost = process.env.API_HOST
+
 function CellEdition() {
 
     // Using Context:
@@ -137,7 +139,7 @@ function CellEdition() {
     // Searching Cart Places:
 
     useEffect(() => {
-        Axios.post("http://localhost:3001/cart_places").then((response) => setPlaces(response.data))
+        Axios.post(`${apiHost}/cart_places`).then((response) => setPlaces(response.data))
     }, [])
 
 
@@ -147,7 +149,7 @@ function CellEdition() {
 
     function handleSave(id = 0, place, initialTime, finalTime, designated1, designated2) {
 
-        Axios.post("http://localhost:3001/designate", {
+        Axios.post(`${apiHost}/designate`, {
             id, place, initialTime, finalTime, designated1, designated2
         })
 

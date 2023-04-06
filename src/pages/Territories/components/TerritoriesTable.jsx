@@ -8,6 +8,8 @@ import Axios from "axios"
 // Importing personal Components and Media:
 import ArrowLeftIcon from "./../../../components/media/arrow_left_icon.svg"
 
+const apiHost = process.env.API_HOST
+
 import Territory1 from "./media/SVG/Territory_1.svg"
 import Territory2 from "./media/SVG/Territory_2.svg"
 import Territory3 from "./media/SVG/Territory_3.svg"
@@ -74,7 +76,7 @@ export default function TerritoriesTable() {
 
     useEffect(() => {
 
-        Axios.post("http://localhost:3001/territories").then((response) => setTerritoriesList(response.data))
+        Axios.post(`${apiHost}/territories`).then((response) => setTerritoriesList(response.data))
 
     }, [])
 
