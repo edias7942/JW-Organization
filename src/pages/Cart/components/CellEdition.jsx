@@ -139,7 +139,7 @@ function CellEdition() {
     // Searching Cart Places:
 
     useEffect(() => {
-        Axios.post(`${apiHost}/cart_places`).then((response) => setPlaces(response.data))
+        Axios.post(apiHost + "/cart_places").then((response) => setPlaces(response.data))
     }, [])
 
 
@@ -149,7 +149,7 @@ function CellEdition() {
 
     function handleSave(id = 0, place, initialTime, finalTime, designated1, designated2) {
 
-        Axios.post(`${apiHost}/designate`, {
+        Axios.post(apiHost + "/designate", {
             id, place, initialTime, finalTime, designated1, designated2
         })
 

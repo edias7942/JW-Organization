@@ -76,7 +76,7 @@ export default function TerritoriesTable() {
 
     useEffect(() => {
 
-        Axios.post(`${apiHost}/territories`).then((response) => setTerritoriesList(response.data))
+        Axios.post(apiHost + "/territories").then((response) => setTerritoriesList(response.data))
 
     }, [])
 
