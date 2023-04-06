@@ -6,6 +6,7 @@ import { useState, useEffect, useContext } from "react";
 import Context from "../../../context/Context"
 import { months, weeks } from "../../../components/consts/YearStructure";
 import { exitEdition } from "./CellEdition";
+const apiHost = process.env.API_HOST
 
 function Cell({ positionInWeek, week, selectedMonth, doubleCell }) {
 
@@ -31,7 +32,7 @@ function Cell({ positionInWeek, week, selectedMonth, doubleCell }) {
     // Searching Data on API:
 
     useEffect(() => {
-        Axios.post("http://jw-organization-api.herokuapp.com/designation", {
+        Axios.post(`${apiHost}/designation`, {
             week,
             positionInWeek,
             doubleCell
