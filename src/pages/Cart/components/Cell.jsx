@@ -31,7 +31,7 @@ function Cell({ positionInWeek, week, selectedMonth, doubleCell }) {
     // Searching Data on API:
 
     useEffect(() => {
-        Axios.post("http://localhost:3001/designation", {
+        Axios.post("http://jw-organization-api.herokuapp.com/designation", {
             week,
             positionInWeek,
             doubleCell
