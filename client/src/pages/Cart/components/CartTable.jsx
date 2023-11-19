@@ -7,7 +7,7 @@ import TableRow from "./TableRow"
 
 function CartTable() {
 
-    const [selectedMonth, setSelectedMonth] = useState(0)
+    const [selectedMonth, setSelectedMonth] = useState(3)
     const week = weeksMonths[selectedMonth].initialWeek
 
     useEffect(() => {

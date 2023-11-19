@@ -3,7 +3,7 @@ const app = express()
 const mysql = require("mysql")
 const cors = require("cors")
 
-let DataBaseChoose = "cloud"
+let DataBaseChoose = "local"
 
 app.use(express.json())
 app.use(cors())
